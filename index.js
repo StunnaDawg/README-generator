@@ -1,4 +1,4 @@
- 
+ const fs = require('fs');
 
 
  const inquirer = require('inquirer');
@@ -39,7 +39,8 @@
         type: 'list',
         message: 'Choose your license of preference',
         name: 'license',
-        choices: ['MIT','Raw','hotdog']
+        choices: ['MIT License', 'Apache License 2.0', 'GNU General Public License v3.0', 'BSD 2-Clause "Simplified" License', 'BSD 3-Clause "New" or "Revised" License', 'Mozilla Public License 2.0', 'Creative Commons Zero v1.0 Universal', 'The Unlicense']
+
     },
     {
         type: 'input',
@@ -54,4 +55,54 @@
  ];
  inquirer.prompt(questions).then(answers => {
     console.log(answers.license);
+  });
+
+const readmeTemplate = [
+    `
+# Project Title
+
+## Description
+
+What is the project about? What problem does it solve? What technologies were used?
+
+## Table of Contents
+
+- Installation
+- Usage
+- Testing
+- Contributing
+- License
+- Questions
+
+## Installation
+
+How can someone install the project on their own machine? Are there any dependencies or requirements? What commands need to be run?
+
+## Usage
+
+How can someone use the project? Are there any specific instructions or guidelines? Are there any examples of usage?
+
+## Testing
+
+What tests are included with the project? How can someone run the tests? Are there any special considerations or requirements for running the tests?
+
+## Contributing
+
+How can someone contribute to the project? Are there any guidelines for contributions? Are there any specific areas that need contributions?
+
+## License
+
+What license is the project released under? What are the terms and conditions of the license? Are there any restrictions or limitations?
+
+##  Questions
+
+If you have any questions about the project, please feel free to contact us at contact@example.com.
+    
+    
+    `
+]
+
+  fs.writeFile('READme.md', readmeTemplate, (err) => {
+    if (err) throw err;
+    console.log('README.md successfully created!');
   });
