@@ -4,7 +4,7 @@
  const inquirer = require('inquirer');
 
 //create questions to prompt README generation
- const questions = [
+ const questions = inquirer.prompt( [
     {
         type: 'input',
         message: 'What will your project title be?',
@@ -18,7 +18,7 @@
     {
         type: 'input',
         message: 'Add the installation instructions in a list format.',
-        name: 'installtion'
+        name: 'installation'
     },
     {
         type: 'input',
@@ -52,18 +52,15 @@
         message: 'Enter your Email address!',
         name: 'email'
     },
- ];
- inquirer.prompt(questions).then(answers => {
-    console.log(answers.license);
-  });
+ ]).then((answers) => {
 
-const readmeTemplate = [
+const readmeTemplate =
     `
-# Project Title
+# ${answers.title}
 
 ## Description
 
-What is the project about? What problem does it solve? What technologies were used?
+${answers.description}
 
 ## Table of Contents
 
@@ -76,33 +73,37 @@ What is the project about? What problem does it solve? What technologies were us
 
 ## Installation
 
-How can someone install the project on their own machine? Are there any dependencies or requirements? What commands need to be run?
+${answers.installation}
 
 ## Usage
 
-How can someone use the project? Are there any specific instructions or guidelines? Are there any examples of usage?
+${answers.usage}
 
 ## Testing
 
-What tests are included with the project? How can someone run the tests? Are there any special considerations or requirements for running the tests?
+${answers.test}
 
 ## Contributing
 
-How can someone contribute to the project? Are there any guidelines for contributions? Are there any specific areas that need contributions?
+${answers.contribution}
 
 ## License
 
-What license is the project released under? What are the terms and conditions of the license? Are there any restrictions or limitations?
+${answers.license}
 
 ##  Questions
 
-If you have any questions about the project, please feel free to contact us at contact@example.com.
+If you have any questions about the project, please feel free to contact me at ${answers.email} 
+My GitHub is https://github/${answers.github}.com
     
     
     `
-]
 
-  fs.writeFile('READme.md', readmeTemplate, (err) => {
+  fs.writeFile('README.md', readmeTemplate, (err) => {
     if (err) throw err;
     console.log('README.md successfully created!');
   });
+
+});
+
+questions;
