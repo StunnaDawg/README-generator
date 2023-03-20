@@ -31,7 +31,7 @@
             }
         }
     },
-    {
+    { //Utlized the editor type so users could easily create a list format if they wish
         type: 'editor',
         message: 'Add the installation instructions in a list format. If using VIM editor press "s" to intiate, when done press esc key and type ":wq!" to submit',
         name: 'installation',
@@ -126,8 +126,9 @@ const readmeTemplate =
 # ${answers.title}
 
 ## Description
+${answers.license[0]}
 
-${answers.description}        ${answers.license[0]}                   
+${answers.description}                       
 
 ## Table of Contents
 
