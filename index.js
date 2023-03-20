@@ -3,37 +3,80 @@
 
  const inquirer = require('inquirer');
 
+
 //create questions to prompt README generation
  const questions = inquirer.prompt( [
     {
         type: 'input',
         message: 'What will your project title be?',
-        name: 'title'
+        name: 'title',
+        validate: function(value) {
+            if (value.length) {
+                return true;
+            } else {
+                return 'Enter a valid title.'
+            }
+        }
     },
     {
         type: 'input',
         message: 'Create a description that describes application. Make sure to include your motivation, the problem it solves, and what you learned.',
-        name: 'description'
+        name: 'description',
+        validate: function(value) {
+            if (value.length) {
+                return true;
+            } else {
+                return 'Enter a valid Description.'
+            }
+        }
     },
     {
-        type: 'input',
-        message: 'Add the installation instructions in a list format.',
-        name: 'installation'
+        type: 'editor',
+        message: 'Add the installation instructions in a list format. If using VIM editor press s to intiate, when done press esc key and type ":wq!" to submit',
+        name: 'installation',
+        validate: function(value) {
+            if (value.length) {
+                return true;
+            } else {
+                return 'Enter valid Instructions.'
+            }
+        }
     },
     {
         type: 'input',
         message: 'Provide examples and instructions of using your application.',
-        name: 'usage'
+        name: 'usage',
+        validate: function(value) {
+            if (value.length) {
+                return true;
+            } else {
+                return 'Enter a valid Instructions.'
+            }
+        }
     },
     {
         type: 'input',
         message: 'If you would like other developers to be able to contribute to your project, add the guidelines here.',
-        name: 'contribution'
+        name: 'contribution',
+        validate: function(value) {
+            if (value.length) {
+                return true;
+            } else {
+                return 'Enter a valid input for the Contribution section.'
+            }
+        }
     }, 
     {
         type: 'input',
         message: 'Write tests for your application here.',
-        name: 'test'
+        name: 'test',
+        validate: function(value) {
+            if (value.length) {
+                return true;
+            } else {
+                return 'Enter a valid Test Description.'
+            }
+        }
     },
     {
         type: 'list',
@@ -45,12 +88,26 @@
     {
         type: 'input',
         message: 'Enter your GitHub username!',
-        name: 'github'
+        name: 'github',
+        validate: function(value) {
+            if (value.length) {
+                return true;
+            } else {
+                return 'Enter a valid GitHub username.'
+            }
+        }
     }, 
     {
         type: 'input',
         message: 'Enter your Email address!',
-        name: 'email'
+        name: 'email',
+        validate: function(value) {
+            if (value.length) {
+                return true;
+            } else {
+                return 'Enter a valid Email address.'
+            }
+        }
     },
  ]).then((answers) => {
 
@@ -64,12 +121,12 @@ ${answers.description}
 
 ## Table of Contents
 
-- Installation
-- Usage
-- Testing
-- Contributing
-- License
-- Questions
+- [Installation](#installation)
+- [Usage](#usage)
+- [Testing](#testing)
+- [Contributing](#contributing)
+- [License](#license)
+- [Questions](#questions)
 
 ## Installation
 
