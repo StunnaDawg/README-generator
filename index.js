@@ -2,14 +2,6 @@
 
 
  const inquirer = require('inquirer');
-
- const linkTransformer = (input) => {
-    const url = input.trim();
-    return {
-      name: url,
-      value: `[${url}](${url})`,
-    };
-  };
   
 
 
@@ -41,7 +33,7 @@
     },
     {
         type: 'editor',
-        message: 'Add the installation instructions in a list format. If using VIM editor press s to intiate, when done press esc key and type ":wq!" to submit',
+        message: 'Add the installation instructions in a list format. If using VIM editor press "s" to intiate, when done press esc key and type ":wq!" to submit',
         name: 'installation',
         validate: function(value) {
             if (value.length) {
@@ -53,7 +45,7 @@
     },
     {
         type: 'editor',
-        message: 'Provide examples and instructions of using your application.',
+        message: 'Provide examples and instructions of using your application. If using VIM editor press "s" to intiate, when done press esc key and type ":wq!" to submit',
         name: 'usage',
         validate: function(value) {
             if (value.length) {
@@ -64,8 +56,8 @@
         }
     },
     {
-        type: 'input',
-        message: 'If you would like other developers to be able to contribute to your project, add the guidelines here.',
+        type: 'editor',
+        message: 'If you would like other developers to be able to contribute to your project, add the guidelines here. If using VIM editor press "s" to intiate, when done press esc key and type ":wq!" to submit',
         name: 'contribution',
         validate: function(value) {
             if (value.length) {
