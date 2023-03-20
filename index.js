@@ -3,6 +3,15 @@
 
  const inquirer = require('inquirer');
 
+ const linkTransformer = (input) => {
+    const url = input.trim();
+    return {
+      name: url,
+      value: `[${url}](${url})`,
+    };
+  };
+  
+
 
 //create questions to prompt README generation
  const questions = inquirer.prompt( [
@@ -43,14 +52,14 @@
         }
     },
     {
-        type: 'input',
+        type: 'editor',
         message: 'Provide examples and instructions of using your application.',
         name: 'usage',
         validate: function(value) {
             if (value.length) {
                 return true;
             } else {
-                return 'Enter a valid Instructions.'
+                return 'Enter a valid usage instructions.'
             }
         }
     },
@@ -82,7 +91,26 @@
         type: 'list',
         message: 'Choose your license of preference',
         name: 'license',
-        choices: ['MIT License', 'Apache License 2.0', 'GNU General Public License v3.0', 'BSD 2-Clause "Simplified" License', 'BSD 3-Clause "New" or "Revised" License', 'Mozilla Public License 2.0', 'Creative Commons Zero v1.0 Universal', 'The Unlicense']
+        choices: [
+            { name: 'MIT License', value: '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)', short: 'hello' },
+            { name: 'Apache License 2.0', value: '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)' },
+            { name: 'GNU General Public License v3.0', value: '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)' },
+            { name: 'BSD 2-Clause "Simplified" License', value: '[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)' },
+            { name: 'BSD 3-Clause "New" or "Revised" License', value: '[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)' },
+            { name: 'Mozilla Public License 2.0', value: '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)' },
+            { name: 'Creative Commons Zero v1.0 Universal', value: '[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)' }, 
+            { name: 'The Unlicense', value: '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)' }
+        ],
+        transformer: [
+            { name: 'MIT License', value: 'MIT License', short: 'hello' },
+            { name: 'Apache License 2.0', value: '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)' },
+            { name: 'GNU General Public License v3.0', value: '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)' },
+            { name: 'BSD 2-Clause "Simplified" License', value: '[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)' },
+            { name: 'BSD 3-Clause "New" or "Revised" License', value: '[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)' },
+            { name: 'Mozilla Public License 2.0', value: '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)' },
+            { name: 'Creative Commons Zero v1.0 Universal', value: '[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)' }, 
+            { name: 'The Unlicense', value: '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)' }
+        ],
 
     },
     {
@@ -117,7 +145,7 @@ const readmeTemplate =
 
 ## Description
 
-${answers.description}
+${answers.description}        ${answers.license}                   
 
 ## Table of Contents
 
@@ -146,7 +174,7 @@ ${answers.contribution}
 
 ## License
 
-${answers.license}
+${answers.license.transformer}
 
 ##  Questions
 
