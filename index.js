@@ -92,25 +92,15 @@
         message: 'Choose your license of preference',
         name: 'license',
         choices: [
-            { name: 'MIT License', value: '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)', short: 'hello' },
-            { name: 'Apache License 2.0', value: '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)' },
-            { name: 'GNU General Public License v3.0', value: '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)' },
-            { name: 'BSD 2-Clause "Simplified" License', value: '[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)' },
-            { name: 'BSD 3-Clause "New" or "Revised" License', value: '[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)' },
-            { name: 'Mozilla Public License 2.0', value: '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)' },
-            { name: 'Creative Commons Zero v1.0 Universal', value: '[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)' }, 
-            { name: 'The Unlicense', value: '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)' }
-        ],
-        transformer: [
-            { name: 'MIT License', value: 'MIT License', short: 'hello' },
-            { name: 'Apache License 2.0', value: '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)' },
-            { name: 'GNU General Public License v3.0', value: '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)' },
-            { name: 'BSD 2-Clause "Simplified" License', value: '[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)' },
-            { name: 'BSD 3-Clause "New" or "Revised" License', value: '[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)' },
-            { name: 'Mozilla Public License 2.0', value: '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)' },
-            { name: 'Creative Commons Zero v1.0 Universal', value: '[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)' }, 
-            { name: 'The Unlicense', value: '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)' }
-        ],
+            { name: 'MIT License', value: ['[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)', 'This project is covered under the MIT License follow the following link for more information: https://opensource.org/licenses/MIT'] },
+            { name: 'Apache License 2.0', value: ['[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)', 'This project is covered under the Apache License 2.0 follow the following link for more information: https://opensource.org/licenses/Apache-2.0'] },
+            { name: 'GNU General Public License v3.0', value: ['[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)', 'This project is covered under the GNU General Public License v3.0 follow the following link for more information: https://www.gnu.org/licenses/gpl-3.0']  },
+            { name: 'BSD 2-Clause "Simplified" License', value: ['[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)', 'This project is covered under the BSD 2-Clause "Simplified" License follow the following link for more information: https://opensource.org/licenses/BSD-2-Clause'] },
+            { name: 'BSD 3-Clause "New" or "Revised" License', value: ['[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)', 'This project is covered under the BSD 3-Clause "New" or "Revised" Licensefollow the following link for more information: https://opensource.org/licenses/BSD-3-Clause'] },
+            { name: 'Mozilla Public License 2.0', value: ['[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)', 'This project is covered under the Mozilla Public License 2.0 follow the following link for more information: https://opensource.org/licenses/MPL-2.0)'] },
+            { name: 'Creative Commons Zero v1.0 Universal', value: ['[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)', 'This project is covered under the Creative Commons Zero v1.0 Universal follow the following link for more information: http://creativecommons.org/publicdomain/zero/1.0/'] }, 
+            { name: 'The Unlicense', value: ['[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)', 'This project is covered under The Unlicense follow the following link for more information: http://unlicense.org/'] }
+        ]
 
     },
     {
@@ -145,7 +135,7 @@ const readmeTemplate =
 
 ## Description
 
-${answers.description}        ${answers.license}                   
+${answers.description}        ${answers.license[0]}                   
 
 ## Table of Contents
 
@@ -174,7 +164,7 @@ ${answers.contribution}
 
 ## License
 
-${answers.license.transformer}
+${answers.license[1]}
 
 ##  Questions
 
