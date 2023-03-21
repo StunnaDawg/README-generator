@@ -1,55 +1,32 @@
 
 # README-generator
 
-## Description
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)        
-This project is a command line application that generates a README template through various prompts from the user. My motivation for this application was so I can easily create README.md template for my various projects in a quick and efficien way. This application solves the problem of always having to create the same template for my projects all the time. During this the creatio of this project I learned how to utlize different functions with the inquirer package also I figured learned how to use 'fswrite' so I could create a README and add the anwsers to yhe prompts                   
-
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
-- [Questions](#questions)
+## Description     
+This project is a command line application that generates a README template through various prompts from the user. My motivation for this application was so I can easily create README.md template for my various projects in a quick and efficient way. This application solves the problem of always having to create the same template for my projects all the time. During the process of buidling this application, I learned how to utlize different functions with the inquirer package, I also got more comfortable with using 'fswrite' to handle the template generation.                 
 
 ## Installation
 
-1. Git clone the repository 
-2. Through the CLI cd into the folder
-3. make sure to npm install so all the dependcies are downlaoded
-4. Run node index.js to initate the prompts
+1. Git clone the repository using the following command: git clone git@github.com:StunnaDawg/README-generator.git
+2. Through the CLI cd into the README-generator directory
+4. If you do not have nodejs installed follow the link to download it: https://nodejs.org/en
+3. Ensure to 'npm install' all the dependencies
+4. Run 'node index.js' while in the README-generator directory to initate the prompts
 5. Answer all the prompts
-6. Once finished the README will be located in the application folder
+6. Once finished the README will be located in the README-generator directory
 
 
 ## Usage
 
 Upon downloading the application make sure you do the following:
 - run 'npm install' so that the dependcies are installed
+  - If the dependencies do not exist: run 'npm i inquirer' to download the latest version of inquirer
 - run 'node index.js' to recieve the question prompts'
 - Some questions require an editor. If you are utilizing mac or linux VIM is the default:
-  - to initate the VIM editor press 's', when finsihed press 'esc' an dthe type ':wq!' 
+  - to initate the VIM editor press 's', when finsihed press 'esc' an dthe type ':wq!'.
+    - The following website provides more information on using VIM: 
+        https://stevenpcurtis.medium.com/using-vim-as-a-text-editing-tool-on-the-mac-9595c1122e91
 
 
-## Testing
-
-N/A
-
-## Contributing
-
-N/A
-
-
-## License
-
-This project is covered under the MIT License follow the following link for more information: https://opensource.org/licenses/MIT
-
-##  Questions
-
-If you have any questions about the project, please feel free to contact me at jonsonallen9@gmail.com 
-My GitHub is https://github/StunnaDawg.com
-    
+## 
     
     
