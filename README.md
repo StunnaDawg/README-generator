@@ -27,6 +27,14 @@ Upon downloading the application make sure you do the following:
         https://stevenpcurtis.medium.com/using-vim-as-a-text-editing-tool-on-the-mac-9595c1122e91
 
 
-## 
+## Demo
+Demo of application is action:
+https://github.com/StunnaDawg/README-generator
+
+## ScreenShot
+
+## Credits
+- Inquirer: https://www.npmjs.com/package/inquirer
+- NodeJS : https://www.npmjs.com/package/inquirer
     
     
