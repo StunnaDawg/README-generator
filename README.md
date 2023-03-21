@@ -32,6 +32,7 @@ Demo of application is action:
 https://github.com/StunnaDawg/README-generator
 
 ## ScreenShot
+![image](https://drive.google.com/uc?export=view&id=1XpIs-TGWzC55yE0FkSmdfFo967Qy4GEn)
 
 ## Credits
 - Inquirer: https://www.npmjs.com/package/inquirer
