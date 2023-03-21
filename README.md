@@ -29,7 +29,7 @@ Upon downloading the application make sure you do the following:
 
 ## Demo
 Demo of application is action:
-https://github.com/StunnaDawg/README-generator
+https://watch.screencastify.com/v/3v5nDzdR7A5Qdrlu68G3 
 
 ## ScreenShot
 ![image](https://drive.google.com/uc?export=view&id=1XpIs-TGWzC55yE0FkSmdfFo967Qy4GEn)
